@@ -1,0 +1,4 @@
+name: Magemines
+version: '${project.version}'
+main: me.waterbroodje.magemines.Main
+api-version: 1.18
