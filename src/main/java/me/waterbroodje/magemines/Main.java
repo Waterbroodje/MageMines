@@ -30,7 +30,7 @@ public final class Main extends JavaPlugin {
                         System.out.println(cuboid);
                         System.out.println(loc1);
                         System.out.println(loc2);
-                        cuboid.getBlocks().forEach(block -> {
+                        cuboid.blockList().forEachRemaining(block -> {
                             int random = (int)(Math.random() * 10 + 1);
                             if (random < 4) {
                                 block.setType(Material.IRON_ORE);
