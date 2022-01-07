@@ -2,6 +2,7 @@ package me.waterbroodje.magemines;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 import org.bukkit.Location;
@@ -41,13 +42,13 @@ public class Cuboid {
         this.zMaxCentered = this.zMax + 0.5;
     }
 
-    public Iterator<Block> blockList() {
+    public List<Block> blockList() {
         final ArrayList<Block> bL = new ArrayList<>(this.getTotalBlockSize());
         for(int x = this.xMin; x <= this.xMax; ++x) {
             for(int y = this.yMin; y <= this.yMax; ++y) {
                 for(int z = this.zMin; z <= this.zMax; ++z) {
                     final Block b = this.world.getBlockAt(x, y, z);
-                    bL.add(b).iterator();
+                    bL.add(b);
                 }
             }
         }
