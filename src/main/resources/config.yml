@@ -5,12 +5,12 @@ reset-time: "05:00"
 mines:
   mine-1:
     location-1:
-      world: spawn
+      world: "spawn"
       x: 110
       y: 50
       z: -334
     location-2:
-      world: spawn
+      world: "spawn"
       x: 41
       y: 131
       z: -404
