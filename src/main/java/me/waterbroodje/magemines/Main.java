@@ -27,6 +27,9 @@ public final class Main extends JavaPlugin {
                         Location loc1 = new Location(Bukkit.getWorld(getConfig().getString("mines." + key + ".location-1.world")), getConfig().getInt("mines." + key + ".location-1.x"), getConfig().getInt("mines." + key + ".location-1.y"), getConfig().getInt("mines." + key + ".location-1.z"));
                         Location loc2 = new Location(Bukkit.getWorld(getConfig().getString("mines." + key + ".location-2.world")), getConfig().getInt("mines." + key + ".location-2.x"), getConfig().getInt("mines." + key + ".location-2.y"), getConfig().getInt("mines." + key + ".location-2.z"));
                         Cuboid cuboid = new Cuboid(loc1, loc2);
+                        System.out.println(cuboid);
+                        System.out.println(loc1);
+                        System.out.println(loc2);
                         cuboid.getBlocks().forEach(block -> {
                             int random = (int)(Math.random() * 10 + 1);
                             if (random < 4) {
