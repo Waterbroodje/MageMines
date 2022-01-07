@@ -2,6 +2,7 @@ package me.waterbroodje.magemines;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -27,7 +28,14 @@ public final class Main extends JavaPlugin {
                         Location loc2 = new Location(Bukkit.getWorld(getConfig().getString("mines." + key + ".location-2.world")), getConfig().getInt("mines." + key + ".location-2.x"), getConfig().getInt("mines." + key + ".location-2.y"), getConfig().getInt("mines." + key + ".location-2.z"));
                         Cuboid cuboid = new Cuboid(loc1, loc2);
                         cuboid.getBlocks().forEach(block -> {
-
+                            int random = (int)(Math.random() * 10 + 1);
+                            if (random < 4) {
+                                block.setType(Material.IRON_ORE);
+                            } else if (random < 8) {
+                                block.setType(Material.COAL_ORE);
+                            } else {
+                                block.setType(Material.DIAMOND);
+                            }
                         });
                     });
                 }
